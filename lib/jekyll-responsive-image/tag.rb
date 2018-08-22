@@ -13,7 +13,11 @@ module Jekyll
       end
 
       def render(context)
-        @attributes['caption'] = markdownify(context, @attributes['caption'])
+        if context.registers[:site].config['responsive_image']['markdownify_attributes']
+          context.registers[:site].config['responsive_image']['markdownify_attributes'].each do |attribute|
+            @attributes[attribute] = markdownify(context, @attributes[attribute]) unless @attributes[attribute].nil?
+          end
+        end
 
         Renderer.new(context.registers[:site], @attributes).render_responsive_image
       end
