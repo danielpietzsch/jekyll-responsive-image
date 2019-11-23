@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.executables   = []
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'jekyll', ['>= 2.0', "< 4.0"]
+  spec.add_runtime_dependency 'jekyll', ['>= 2.0', "< 5.0"]
   spec.add_runtime_dependency 'mini_magick', '~> 4.8'
   spec.add_runtime_dependency 'fastimage', '~> 2.1'
 end
